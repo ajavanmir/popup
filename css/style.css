@@ -1,0 +1,64 @@
+/*
+Copyright amir javanmir
+Released on: June 16, 2024
+*/
+@font-face {
+    font-family: IRANSansX;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/woff/IRANSansX-Regular.woff') format('woff'), url('../font/woff2/IRANSansX-Medium.woff2') format('woff2');
+}
+:root {
+    --color-background: rgba(0, 0, 0, 0.6);
+    --color-white: #fff;
+    --popup-padding: 2rem
+}
+body{
+    font-family: "IRANSansX";
+}
+.custom-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999999999999;
+    backdrop-filter: blur(2px);
+}
+.custom-popup p {
+    width: var(--popup-width-desktop);
+    font-size: var(--popup-font-size);
+    background: var(--color-white);
+    padding: var(--popup-padding);
+    border-radius: 5px;
+    position: relative;
+    direction: rtl;
+}
+.popup-close-btn {
+    background: var(--color-white);
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    transform: translate(0%, -10px);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.popup-close-btn::after {
+    content: '\2716';
+    font-size: 0.9rem;
+    transform: translateY(0px);
+}
+@media only screen and (max-width: 575px) {
+    .custom-popup p {
+        width: var(--popup-width-mobile);
+    }
+}
